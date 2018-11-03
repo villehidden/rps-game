@@ -1,75 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Hidden Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
 </head>
 <body>
-    <script>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
 
-        function computerPlay() {
-            const choice = ['Rock', 'Paper', 'Scissors'];
-            let random = Math.floor(Math.random() * 3);
-            if (random === 3) {
-                return choice[2]
-            }
-            else return choice[random]
-        }
+    <div class='score-board'>
+        <div id='user-label' class='badge'>user</div>
+        <div id='computer-label' class='badge'>comp</div>
+        <span id='user-score'>0</span> : <span id='computer-score'>0</span>
+    </div>
 
-        function playRound(playerSelection, computerSelection) {
-            playerSelection = playerSelection.toLowerCase();
-            playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
-            if ( (playerSelection == 'Rock' && computerSelection == 'Scissors') ||
-                 (playerSelection == 'Paper' && computerSelection == 'Rock') ||
-                 (playerSelection == 'Scissors' && computerSelection == 'Paper') ) {
-                return `You win! ${playerSelection} beats ${computerSelection}`;
-            } else if ( (playerSelection == 'Rock' && computerSelection == 'Paper') ||
-                        (playerSelection == 'Paper' && computerSelection == 'Scissors') ||
-                        (playerSelection == 'Scissors' && computerSelection == 'Rock') ) {
-                return `You lose! ${computerSelection} beats ${playerSelection}`;
-            } else if (playerSelection == computerSelection) {
-                return 'Draw!';
-            } else {
-                return 'Invalid option. Try again.';
-            }
-        }
+    <div class='result'>
+        <p>HmmmMMMMmmMMMmm...</p>
+    </div>
 
-        function game() {
-            let playerScore = 0;
-            let computerScore = 0;
-            let message;
+    <div class='choices'>
+        <div class='choice' id='rock'>
+            <img src='images/rock.png' alt=''>
+        </div>
+        <div class='choice' id='paper'>
+            <img src='images/paper.png' alt=''>
+        </div>
+        <div class='choice' id='scissors'>
+            <img src='images/scissors.png' alt=''>
+        </div>
+    </div>
 
-            for (let i = 1; i<=5; i++) {
-                let playerSelection = window.prompt('Choose one: Rock, Paper, Scissors');
-                let computerSelection = computerPlay();
-                let roundResult = playRound(playerSelection, computerSelection);
+    <p id='action-message'>Choose a weapon</p>
 
-               if (roundResult.includes('win')) {
-                    playerScore++;
-                } else if (roundResult.includes('lose')) {
-                    computerScore++;
-                }
-                console.log(`Round ${i}: \nYou chose ${playerSelection} \nComputer chose ${computerSelection} \n${roundResult}`);
-                console.log(`Your score: ${playerScore}`);
-                console.log(`Computer score: ${computerScore}`);
-            }
-
-            if (playerScore > computerScore) {
-                message = 'You won the game!';
-            }
-            else if (playerScore < computerScore) {
-                message = 'You lost the game :(';
-            }
-            else message = 'Draw';
-
-            return `End result:
-                    \nYour score: ${playerScore} \nComputer score: ${computerScore}
-                    \n${message}`;
-            
-        }
-
-    </script>
+    <script src="app.js" charset="utf-8"></script>
 </body>
 </html>

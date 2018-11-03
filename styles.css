@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Ruslan+Display');
+@import url('https://fonts.googleapis.com/css?family=Pattaya');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3b7093;
+}
+
+header {
+    background-color: white;
+    padding: 20px;
+}
+
+header > h1 {
+    color: #3b7093;
+    text-align: center;
+    font-family: 'Pattaya', sans-serif;
+    font-size: 50px;
+}
+
+.score-board {
+    margin: 50px auto;
+    border: 3px solid white;
+    color: white;
+    border-radius: 6px;
+    text-align: center;
+    width: 200px;
+    font-family: 'Pattaya', sans-serif;
+    padding: 15px 20px;
+    font-size: 50px;
+    position: relative;
+}
+
+.badge {
+    background-color: #eb978e;
+    color: white;
+    padding: 4px 10px;
+    font-size: 25px;
+}
+
+#user-label {
+    position: absolute;
+    top: 30px;
+    left: -125px;
+    border-radius: 4px;
+}
+
+#computer-label {
+    position: absolute;
+    top: 30px;
+    right: -125px;
+    border-radius: 4px;
+}
+
+.result {
+    margin: 50px 25px;
+    font-size: 40px;
+    color: white;
+}
+
+.result > p {
+    text-align: center;
+    font-family: 'Pattaya', sans-serif;
+}
+
+.choices {
+    text-align: center;
+}
+
+.choice {
+    border: 10px solid white;
+    border-radius: 50%;
+    margin:  0 20px;
+    display: inline-block;
+}
+
+.choice:hover {
+    cursor: pointer;
+    background: rgb(107, 172, 107);
+}
+
+img {
+    width: 100px;
+}
+
+#action-message {
+    text-align: center;
+    color: white;
+    font-family: 'Pattaya', sans-serif;
+    font-size: 20px;
+    margin-top: 40px;
+
+}
